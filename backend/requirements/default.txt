@@ -50,6 +50,7 @@ atlassian-python-api==3.41.16
 attrs==25.4.0
     # via
     #   aiohttp
+    #   boxsdk
     #   cyclopts
     #   jsonschema
     #   referencing
@@ -91,6 +92,8 @@ botocore==1.39.11
     #   s3transfer
 botocore-stubs==1.40.74
     # via boto3-stubs
+boxsdk==3.11.0
+    # via onyx
 braintrust==0.3.9
     # via onyx
 brotli==1.2.0
@@ -175,6 +178,7 @@ courlan==1.3.2
 cryptography==46.0.3
     # via
     #   authlib
+    #   boxsdk
     #   msal
     #   pdfminer-six
     #   pyjwt
@@ -772,6 +776,7 @@ pygments==2.19.2
     # via rich
 pyjwt==2.10.1
     # via
+    #   boxsdk
     #   fastapi-users
     #   msal
     #   pygithub
@@ -806,6 +811,7 @@ python-dateutil==2.8.2
     #   aiobotocore
     #   asana
     #   botocore
+    #   boxsdk
     #   celery
     #   dateparser
     #   google-cloud-bigquery
@@ -889,6 +895,7 @@ regex==2025.11.3
 requests==2.32.5
     # via
     #   atlassian-python-api
+    #   boxsdk
     #   braintrust
     #   cohere
     #   dropbox
@@ -936,6 +943,7 @@ requests-oauthlib==1.3.1
     #   onyx
 requests-toolbelt==1.0.0
     # via
+    #   boxsdk
     #   jira
     #   langsmith
     #   python-gitlab
@@ -1145,6 +1153,7 @@ urllib3==2.6.0
     # via
     #   asana
     #   botocore
+    #   boxsdk
     #   courlan
     #   distributed
     #   htmldate

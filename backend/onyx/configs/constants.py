@@ -187,6 +187,7 @@ class DocumentSource(str, Enum):
     ZENDESK = "zendesk"
     LOOPIO = "loopio"
     DROPBOX = "dropbox"
+    BOX = "box"
     SHAREPOINT = "sharepoint"
     TEAMS = "teams"
     SALESFORCE = "salesforce"

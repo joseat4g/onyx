@@ -1158,6 +1158,11 @@ For example, specifying .*-support.* as a "channel" will cause the connector to 
     values: [],
     advanced_values: [],
   },
+  box: {
+    description: "Configure Box connector",
+    values: [],
+    advanced_values: [],
+  },
   s3: {
     description: "Configure S3 connector",
     values: [
@@ -1868,6 +1873,8 @@ export interface ZendeskConfig {
 }
 
 export interface DropboxConfig {}
+
+export interface BoxConfig {}
 
 export interface S3Config {
   bucket_type: "s3";

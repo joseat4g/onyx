@@ -112,6 +112,10 @@ CONNECTOR_CLASS_MAP = {
         module_path="onyx.connectors.dropbox.connector",
         class_name="DropboxConnector",
     ),
+    DocumentSource.BOX: ConnectorMapping(
+        module_path="onyx.connectors.box.connector",
+        class_name="BoxConnector",
+    ),
     DocumentSource.SHAREPOINT: ConnectorMapping(
         module_path="onyx.connectors.sharepoint.connector",
         class_name="SharepointConnector",

@@ -173,6 +173,15 @@ export interface DropboxCredentialJson {
   dropbox_access_token: string;
 }
 
+export interface BoxCredentialJson {
+  client_id?: string;
+  client_secret?: string;
+  access_token?: string;
+  refresh_token?: string;
+  box_json_config?: TypedFile;
+  authentication_method?: string;
+}
+
 export interface R2CredentialJson {
   account_id: string;
   r2_access_key_id: string;
@@ -322,6 +331,34 @@ export const credentialTemplates: Record<ValidSources, any> = {
     loopio_client_token: "",
   } as LoopioCredentialJson,
   dropbox: { dropbox_access_token: "" } as DropboxCredentialJson,
+  box: {
+    authentication_method: "oauth2",
+    authMethods: [
+      {
+        value: "oauth2",
+        label: "OAuth 2.0",
+        fields: {
+          client_id: "",
+          client_secret: "",
+          access_token: "",
+          refresh_token: "",
+        },
+        description:
+          "Use OAuth 2.0 authentication with access and refresh tokens. This requires manual token generation from Box.",
+        disablePermSync: true,
+      },
+      {
+        value: "jwt",
+        label: "Server Authentication (JWT)",
+        fields: {
+          box_json_config: null,
+        },
+        description:
+          "Use Server Authentication with JWT. Upload the JSON configuration file downloaded from your Box App's configuration page. This method is recommended for server-to-server integrations and supports enterprise-level permissions.",
+        disablePermSync: false,
+      },
+    ],
+  } as CredentialTemplateWithAuth<BoxCredentialJson>,
   salesforce: {
     sf_username: "",
     sf_password: "",
@@ -636,6 +673,9 @@ export const credentialDisplayNames: Record<string, string> = {
   // Bitbucket
   bitbucket_email: "Bitbucket Account Email",
   bitbucket_api_token: "Bitbucket API Token",
+
+  // Box
+  box_json_config: "Box JSON Configuration File",
 };
 
 export function getDisplayNameForCredentialKey(key: string): string {

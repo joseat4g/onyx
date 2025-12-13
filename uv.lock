@@ -529,6 +529,28 @@ wheels = [
 ]
 
 [[package]]
+name = "boxsdk"
+version = "3.11.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "attrs" },
+    { name = "python-dateutil" },
+    { name = "requests" },
+    { name = "requests-toolbelt" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/33/2f/2986520ba1b5bcc1b852152ec16a0479d339fa29a8b31ed00f3247814252/boxsdk-3.11.0.tar.gz", hash = "sha256:9b09e50a18fe9607493468961a2211b16b0ac19fdad5d91602a7e50eb1438a09", size = 472307, upload-time = "2024-06-07T13:05:49.456Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6f/82/051dd0f43fc0d1f68dc5c4e0a76d4c19a3b6c503f7dda0b9d708e3f73bde/boxsdk-3.11.0-py2.py3-none-any.whl", hash = "sha256:e2b82a9fc304fea8c6e8c9f2f6f4f09e5e65f5036dd039e830e9a257ce913d7e", size = 140150, upload-time = "2024-06-07T13:05:46.111Z" },
+]
+
+[package.optional-dependencies]
+jwt = [
+    { name = "cryptography" },
+    { name = "pyjwt" },
+]
+
+[[package]]
 name = "braintrust"
 version = "0.3.9"
 source = { registry = "https://pypi.org/simple" }
@@ -3393,6 +3415,7 @@ backend = [
     { name = "beautifulsoup4" },
     { name = "boto3" },
     { name = "boto3-stubs", extra = ["s3"] },
+    { name = "boxsdk", extra = ["jwt"] },
     { name = "braintrust" },
     { name = "celery" },
     { name = "chardet" },
@@ -3545,6 +3568,7 @@ requires-dist = [
     { name = "black", marker = "extra == 'dev'", specifier = "==25.1.0" },
     { name = "boto3", marker = "extra == 'backend'", specifier = "==1.39.11" },
     { name = "boto3-stubs", extras = ["s3"], marker = "extra == 'backend'", specifier = "==1.39.11" },
+    { name = "boxsdk", extras = ["jwt"], marker = "extra == 'backend'", specifier = "==3.11.0" },
     { name = "braintrust", marker = "extra == 'backend'", specifier = "==0.3.9" },
     { name = "brotli", specifier = ">=1.2.0" },
     { name = "celery", marker = "extra == 'backend'", specifier = "==5.5.1" },
